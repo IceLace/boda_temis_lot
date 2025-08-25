@@ -3033,6 +3033,7 @@ a:focus {
 .important-people-section .tablist .nav-pills .nav-link {
   background-color: #EAF0EE;
   color: #767878;
+  padding: 5px;
 }
 .important-people-section .tablist .nav-pills .nav-link.active {
   background-color: #5e9a8e;
