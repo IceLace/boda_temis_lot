@@ -868,10 +868,10 @@
                         <p>¡La pista de baile también es tuya! Déjanos una canción que no puede faltar esa noche, y la pondremos para que la disfrutes con nosotros.</p>
                         <form id="songs-form" class="form validate-rsvp-form row" method="post">
                             <div class="col-md-6 mb-4">
-                                <input type="text" name="artista" class="form-control" placeholder="Artista*">
+                                <input type="text" name="artista" id="artista" class="form-control" placeholder="Artista*">
                             </div>
                             <div class="col-md-6 mb-4">
-                                <input type="text" name="cancion" class="form-control" placeholder="Canción*">
+                                <input type="text" name="cancion" id="cancion" class="form-control" placeholder="Canción*">
                             </div>
                             
                             <div class="col-md-12 mb-4 submit-btn">
@@ -913,34 +913,32 @@
     <!-- All JavaScript files
     ================================================== -->
     <script>
-        const scriptURL = "https://script.google.com/macros/s/AKfycbwBQNHrsi9GbZdTeymXK9ERxoHOfbPhCmxCeHDX-eugiNQTiRqzJxIK7XYUxDPGy1LmyQ/exec";
-        const form = document.getElementById("songs-form");
-        const respuesta = document.getElementById("form-response");
-
-        form.addEventListener("submit", e => {
+        document.getElementById("songs-form").addEventListener("submit", function(e) {
         e.preventDefault();
 
-        const data = {
-            artista: form.artista.value,
-            cancion: form.cancion.value
-        };
+        const form = e.target;
+        const formData = new FormData(form);
+        const params = new URLSearchParams(formData).toString();
+        const respuesta = document.getElementById("form-response");
 
-        fetch(scriptURL, {
+        fetch("https://script.google.com/macros/s/AKfycbyILeGOEgKY66zDXdesS8rhNb-VmSe_Svs_G2l8yinRsxh2fuoaiDlaPKJeaRBQI9JJpA/exec", {
             method: "POST",
-            body: JSON.stringify(data),
-            headers: { "Content-Type": "application/json" }
+            headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: params
         })
-        .then(res => res.json())
-        .then(() => {
+        .then(response => response.text())
+        .then(data => {
             respuesta.textContent = "✅ ¡Gracias! Tu canción ha sido guardada.";
             form.reset();
         })
-        .catch(err => {
+        .catch(error => {
             respuesta.textContent = "❌ Error al enviar. Intenta de nuevo.";
-            console.error(err);
         });
         });
     </script>
+
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 
@@ -952,5 +950,3 @@
     <script src="js/script.js"></script>
 </body>
 </html>
-
-
