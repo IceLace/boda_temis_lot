@@ -851,6 +851,44 @@
         </section>
         <!-- end gift-registration-section -->
 
+        <!-- start rsvp-section -->
+        <section class="rsvp-section section-padding parallax" data-bg-image="images/rsvp-bg.jpg" data-speed="7">
+            <div class="container">
+                <div class="row">
+                    <div class="col col-xs-12">
+                        <div class="section-title-white">
+                            <div class="vertical-line"><span><i class="fi flaticon-two"></i></span></div>
+                            <h2>Únete a nuestra fiesta</h2>
+                        </div>
+                    </div>
+                </div> <!-- end section-title -->
+
+                <div class="row content justify-content-center">
+                    <div class="col-lg-8 col-md-10">
+                        <p>¡La pista de baile también es tuya! Déjanos una canción que no puede faltar esa noche, y la pondremos para que la disfrutes con nosotros.</p>
+                        <form id="songs-form" class="form validate-rsvp-form row" method="post">
+                            <div class="col-md-6 mb-4">
+                                <input type="text" name="artista" class="form-control" placeholder="Artista*">
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <input type="text" name="cancion" class="form-control" placeholder="Canción*">
+                            </div>
+                            
+                            <div class="col-md-12 mb-4 submit-btn">
+                                <button type="submit" class="submit">Enviar 🎶</button>
+                                <span id="loader"><i class="fa fa-refresh fa-spin fa-3x fa-fw"></i></span>
+                            </div>
+                            <div class="col-md-12 mb-4 success-error-message">
+                                <div id="form-response"></div>
+                                <!-- <div id="error"> Un error ocurrió. Por favor intente más tarde. </div> -->
+                            </div>
+                        </form>
+                    </div>
+                </div> <!-- end row -->
+            </div> <!-- end container -->
+        </section>
+        <!-- end rsvp-section -->
+
         <!-- start footer -->
         <footer class="site-footer">
             <div class="back-to-top">
@@ -874,6 +912,35 @@
 
     <!-- All JavaScript files
     ================================================== -->
+    <script>
+        const scriptURL = "https://script.google.com/macros/s/AKfycbzrR01EQDdhx-4AiPpZxo9AbXedceqSO5Ag7lyeYzRXW6P4MottrXr6ibHAyRBw3UklwA/exec";
+        const form = document.getElementById("songs-form");
+        const respuesta = document.getElementById("form-response");
+
+        form.addEventListener("submit", e => {
+        e.preventDefault();
+
+        const data = {
+            artista: form.artista.value,
+            cancion: form.cancion.value
+        };
+
+        fetch(scriptURL, {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: { "Content-Type": "application/json" }
+        })
+        .then(res => res.json())
+        .then(() => {
+            respuesta.textContent = "✅ ¡Gracias! Tu canción ha sido guardada.";
+            form.reset();
+        })
+        .catch(err => {
+            respuesta.textContent = "❌ Error al enviar. Intenta de nuevo.";
+            console.error(err);
+        });
+        });
+    </script>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 
