@@ -417,6 +417,8 @@
                             <div class="section-title">
                                 <hr>
                                 <h4><b>El Gran Día (15 Sep)</b></h4>
+                                <p style="color: #a9a9a9;">No hay fecha que no llegue, ni plazo que no se cumpla. Y en nuestro caso fueron hasta este día 10 años, 4 meses y 27 días.</p>
+                                <p style="color: #a9a9a9;">Pero henos aquí. De haber sido posible estarían aquí tantas personas que nos quieren, que nos han apoyado y nos han brindado su cariño y amistad, que de verdad habríamos llenado el hotel. Pero sabemos que a veces es imposible. Aun así los llevamos en el corazón.</p>
                             </div>
                         </div>
                         <div class="event">
@@ -433,10 +435,8 @@
                                             Ver ubicación
                                         </a>
                                     </li>
-                                    <li><i class="fa fa-sticky-note-o"></i>
-                                        <p style="color: #a9a9a9;">No hay fecha que no llegue, ni plazo que no se cumpla. Y en nuestro caso fueron hasta este día 10 años, 4 meses y 27 días.</p>
-                                        <p style="color: #a9a9a9;">Pero henos aquí. De haber sido posible estarían aquí tantas personas que nos quieren, que nos han apoyado y nos han brindado su cariño y amistad, que de verdad habríamos llenado el hotel. Pero sabemos que a veces es imposible. Aun así los llevamos en el corazón.</p>
-                                    </li>
+                                    <!-- <li><i class="fa fa-sticky-note-o"></i>
+                                    </li> -->
                                 </ul>
                             </div>
                         </div>
@@ -518,13 +518,13 @@
                                 <img src="images/events/regreso.jpg" alt class="img img-fluid">
                             </div>
                             <div class="details">
-                                <h3>Regreso a Zacatecas</h3>
+                                <h3>Salida del Hotel</h3>
                                 <ul>
                                     <li><i class="fa fa-clock-o"></i><b> 16 Sep 2025, 11AM</b></li>
                                     <li><i class="fa fa-map-marker"></i>Lobby Hotel Grand Palladium Vallarta, Punta de Mita, Nayarit.</li>
                                     <li><i class="fa fa-sticky-note-o"></i>
                                         <p style="color: #a9a9a9;">- <b>11:00 AM</b> Check-out general</p>
-                                        <p style="color: #a9a9a9;">&nbsp;&nbsp;&nbsp;&nbsp;- El autobús estará esperándolos para el traslado de regreso a Zacateas. Durante el trayecto se harán algunas paradas para comer con calma.</p>
+                                        <p style="color: #a9a9a9;">- <b>QUIENES REGRESAN A ZACATECAS:</b> El autobús estará esperándolos para el traslado de regreso a Zacateas. Durante el trayecto se harán algunas paradas para comer con calma.</p>
                                         <p style="color: #a9a9a9;">- <b>10:00 PM</b> Llegada a Zacatecas, al mismo punto donde partimos.</p>
                                     </li>
                                 </ul>
@@ -1103,9 +1103,22 @@
 
                 <div class="row content">
                     <div class="col col-lg-6">
-                        <h3>Restaurantes en el hotel</h3>
-                        <p>Sabemos que parte del ir a un Todo incluido es también asistir a los restaurantes de especialidades y este hotel no es la excepción.</p>
-                        <p>Portofino (cocina italiana), Bamboo (cocina asiática), La Adelita (cocina mexicana) y The Nest(Family Selection), además de 4 restaurantes de cocina internacional con islas temáticas de autoservicio y show-cooking. Además de 9 bares, incluyendo Xtra Time Sports Bar(4pm a 6am) y un pool bar.</p>
+                        <h3>Pronóstico del Clima</h3>
+                        
+                        <table id="forecast-table">
+                            <thead>
+                                <tr>
+                                    <th>Fecha</th>
+                                    <th>Temp. Máx / Min</th>
+                                    <th>Humedad</th>
+                                    <th>Probabilidad de LLuvia</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <!-- Data will be inserted here -->
+                            </tbody>
+                        </table>
+
                     </div>
                     <div class="col col-lg-6">
                         <h3>Código de vestimenta - Boda en la playa</h3>
@@ -1127,10 +1140,8 @@
                         <p> Gracias por acompañarnos y darle estilo, alma y cariño a esta fiesta 🌊💫</p>
                     </div>
                 </div> <!-- end row -->
-                <br/>
-                <hr>
-                <br/>
-                <div class="row content">
+
+                <!-- <div class="row content">
                     <div class="col col-lg-6">
                         <h3>Restaurantes en el hotel</h3>
                         <p>Sabemos que parte del ir a un Todo incluido es también asistir a los restaurantes de especialidades y este hotel no es la excepción.</p>
@@ -1155,7 +1166,7 @@
                         </ul>
                         
                     </div>
-                </div> <!-- end row -->
+                </div> end row -->
             </div> <!-- end container -->
         </section>
         <!-- end getting-there-section -->
@@ -1414,6 +1425,53 @@
         // 🎉 Cuestionario
         attachFormHandler("quiz-form", "quiz-response", "✅ ¡Gracias! Tus respuestas han sido guardadas.");
     </script>
+    
+    <script>
+        
+        function formatDate(isoDate) {
+            const date = new Date(isoDate);
+            const day = date.getDate().toString().padStart(2, '0');
+            const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                                "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+            const month = monthNames[date.getMonth()];
+            return `${day} ${month}`;
+        }
+
+        function getForecast() {
+            const latitude = 20.7736;
+            const longitude = -105.5186;
+            const startDate = "2025-09-14";
+            const endDate = "2025-09-15";
+
+            const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&start_date=${startDate}&end_date=${endDate}&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,relative_humidity_2m_max,relative_humidity_2m_min&timezone=America/Mexico_City`;
+
+            fetch(url)
+            .then(response => response.json())
+            .then(data => {
+            const daily = data.daily;
+            const tableBody = document.querySelector("#forecast-table tbody");
+            tableBody.innerHTML = "";
+
+            for (let i = 0; i < daily.time.length; i++) {
+                const row = `
+                <tr>
+                    <td>${formatDate(daily.time[i])}</td>
+                    <td>${daily.temperature_2m_max[i]} °C / ${daily.temperature_2m_min[i]} °C</td>
+                    <td>${daily.relative_humidity_2m_min[i]}-${daily.relative_humidity_2m_max[i]}%</td>
+                    <td>${daily.precipitation_probability_max[i]}%</td>
+                </tr>
+                `;
+                tableBody.innerHTML += row;
+            }
+            })
+            .catch(error => {
+            document.querySelector("#forecast-table tbody").innerHTML = `<tr><td colspan="6">Error fetching data: ${error}</td></tr>`;
+            });
+        }
+
+        window.onload = getForecast;
+    </script>
+
 
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
