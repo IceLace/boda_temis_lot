@@ -3420,25 +3420,25 @@ a:focus {
 }
 
 .rsvp-section .form ::-webkit-input-placeholder {
-  font-style: 18px;
+  font-size: 18px;
   font-style: normal;
   color: #2a2a2a;
 }
 
 .rsvp-section .form :-moz-placeholder {
-  font-style: 18px;
+  font-size: 18px;
   font-style: normal;
   color: #2a2a2a;
 }
 
 .rsvp-section .form ::-moz-placeholder {
-  font-style: 18px;
+  font-size: 18px;
   font-style: normal;
   color: #2a2a2a;
 }
 
 .rsvp-section .form :-ms-input-placeholder {
-  font-style: 18px;
+  font-size: 18px;
   font-style: normal;
   color: #2a2a2a;
 }
@@ -4157,5 +4157,26 @@ a:focus {
 .blog-details-content .comment-respond .comment-form .submit-btn button {
   border-radius: 0;
 }
+
+#quiz-form label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px; /* spacing between radio and text */
+}
+
+#quiz-form input[type="radio"] {
+  vertical-align: middle;    /* espacio entre círculo y texto */
+  margin: 0;
+  height: 25px;
+}
+
+#quiz-form li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
 
 /*# sourceMappingURL=style.css.map 
