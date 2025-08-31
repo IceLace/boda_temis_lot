@@ -1189,7 +1189,7 @@
         <!-- end gift-registration-section -->
 
         <!-- start song-section -->
-        <section class="rsvp-section section-padding parallax" data-bg-image="images/rsvp-bg.jpg" data-speed="7">
+        <section class="rsvp-section section-padding parallax" data-bg-image="images/songs-bg.jpg" data-speed="7">
             <div class="container">
                 <div class="row">
                     <div class="col col-xs-12">
@@ -1204,8 +1204,9 @@
                     <div class="col-lg-8 col-md-10">
                         <p>¡La pista de baile también es tuya! Déjanos una canción que no puede faltar esa noche, y se la propondremos al DJ para que la disfrutemos todos juntos.</p>
                         <form id="songs-form" class="form validate-rsvp-form row" method="post">
+                            <input type="hidden" name="formType" value="songs">
                             <div class="col-md-6 mb-4">
-                                <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Tú Nombre*">
+                                <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Tu Nombre*">
                             </div>
                             <div class="col-md-6 mb-4">
                                 <input type="text" name="artista" id="artista" class="form-control" placeholder="Artista*">
@@ -1230,7 +1231,7 @@
         <!-- end song-section -->
 
         <!-- start song-section -->
-        <section class="rsvp-section section-padding parallax" data-bg-image="images/rsvp-bg.jpg" data-speed="7">
+        <section class="rsvp-section section-padding parallax" data-bg-image="images/quiz-bg.jpg" data-speed="7">
             <div class="container">
                 <div class="row">
                     <div class="col col-xs-12">
@@ -1242,117 +1243,115 @@
                 </div> <!-- end section-title -->
 
                 <div class="row content justify-content-center">
-                    <div class="row content justify-content-center">
-                        <div class="col-lg-8 col-md-10"> 
-                            <p>Los más acertados recibirán una sorpresa especial durante la fiesta.</p> 
+                    <div class="col-lg-8 col-md-10"> 
+                        <p><b>Los más acertados recibirán una sorpresa especial durante la fiesta</b></p> 
 
-                            <form id="quiz-form" class="form validate-rsvp-form row" method="post" action="/submit">
+                        <form id="quiz-form" class="form validate-rsvp-form row" method="post">
+                            <input type="hidden" name="formType" value="quiz">
+                            <div class="form-group col-12 mb-3">
+                                <label><strong>1. 👰‍♀️ ¿Cómo será el vestido de la novia?</strong></label>
+                                <ul class="ms-4">
+                                    <li><label><input type="radio" name="q1" value="Sirena" required> Sirena</label></li>
+                                    <li><label><input type="radio" name="q1" value="Tompeta"> Tompeta</label></li>
+                                    <li><label><input type="radio" name="q1" value="Mono"> Mono</label></li>
+                                    <li><label><input type="radio" name="q1" value="Recto"> Recto</label></li>
+                                    <li><label><input type="radio" name="q1" value="Linea A"> Linea A</label></li>
+                                    <li><label><input type="radio" name="q1" value="Ajustado y acampanado"> Ajustado y acampanado</label></li>
+                                    <li><label><input type="radio" name="q1" value="Tubo"> Tubo</label></li>
+                                    <li><label><input type="radio" name="q1" value="Imperio"> Imperio</label></li>
+                                    <li><label><input type="radio" name="q1" value="Princesa"> Princesa</label></li>
+                                </ul>
+                            </div>
 
-                                <div class="form-group col-12 mb-3">
-                                    <label><strong>1. 👰‍♀️ ¿Cómo será el vestido de la novia?</strong></label>
-                                    <ul class="ms-4">
-                                        <li><label><input type="radio" name="q1" value="Sirena" required> Sirena</label></li>
-                                        <li><label><input type="radio" name="q1" value="Tompeta"> Tompeta</label></li>
-                                        <li><label><input type="radio" name="q1" value="Mono"> Mono</label></li>
-                                        <li><label><input type="radio" name="q1" value="Recto"> Recto</label></li>
-                                        <li><label><input type="radio" name="q1" value="Linea A"> Linea A</label></li>
-                                        <li><label><input type="radio" name="q1" value="Ajustado y acampanado"> Ajustado y acampanado</label></li>
-                                        <li><label><input type="radio" name="q1" value="Tubo"> Tubo</label></li>
-                                        <li><label><input type="radio" name="q1" value="Imperio"> Imperio</label></li>
-                                        <li><label><input type="radio" name="q1" value="Princesa"> Princesa</label></li>
-                                    </ul>
-                                </div>
+                            <!-- Pregunta 2 -->
+                            <div class="form-group col-12 mb-3">
+                                <label><strong>2. 🤵 ¿De qué color será el traje del novio?</strong></label>
+                                <ul class="ms-4">
+                                    <li><label><input type="radio" name="q2" value="Verde" required> Verde</label></li>
+                                    <li><label><input type="radio" name="q2" value="Azul"> Azul</label></li>
+                                    <li><label><input type="radio" name="q2" value="Ivory"> Ivory (Color Hueso)</label></li>
+                                    <li><label><input type="radio" name="q2" value="Negro clásico"> Negro clásico</label></li>
+                                </ul>
+                            </div>
 
-                                <!-- Pregunta 2 -->
-                                <div class="form-group col-12 mb-3">
-                                    <label><strong>2. 🤵 ¿De qué color será el traje del novio?</strong></label>
-                                    <ul class="ms-4">
-                                        <li><label><input type="radio" name="q2" value="Verde" required> Verde</label></li>
-                                        <li><label><input type="radio" name="q2" value="Azul"> Azul</label></li>
-                                        <li><label><input type="radio" name="q2" value="Ivory"> Ivory (Color Hueso)</label></li>
-                                        <li><label><input type="radio" name="q2" value="Negro clásico"> Negro clásico</label></li>
-                                    </ul>
-                                </div>
+                            <!-- Pregunta 3 -->
+                            <div class="form-group col-12 mb-3">
+                                <label><strong>3. 💃 ¿Con qué canción abrirán el baile los novios?</strong></label>
+                                <ul class="ms-4">
+                                    <li><label><input type="radio" name="q3" value="Romántico y lento" required> Algo romántico y lento</label></li>
+                                    <li><label><input type="radio" name="q3" value="Sorpresa"> Una canción sorpresa</label></li>
+                                    <li><label><input type="radio" name="q3" value="Cumbia"> Cumbia para prender la pista</label></li>
+                                    <li><label><input type="radio" name="q3" value="Acústica"> Una versión acústica muy especial</label></li>
+                                </ul>
+                            </div>
 
-                                <!-- Pregunta 3 -->
-                                <div class="form-group col-12 mb-3">
-                                    <label><strong>3. 💃 ¿Con qué canción abrirán el baile los novios?</strong></label>
-                                    <ul class="ms-4">
-                                        <li><label><input type="radio" name="q3" value="Romántico y lento" required> Algo romántico y lento</label></li>
-                                        <li><label><input type="radio" name="q3" value="Sorpresa"> Una canción sorpresa</label></li>
-                                        <li><label><input type="radio" name="q3" value="Cumbia"> Cumbia para prender la pista</label></li>
-                                        <li><label><input type="radio" name="q3" value="Acústica"> Una versión acústica muy especial</label></li>
-                                    </ul>
-                                </div>
+                            <!-- Pregunta 4 -->
+                            <div class="form-group col-12 mb-3">
+                                <label><strong>4. ☔ ¿Crees que lloverá el día de la boda?</strong></label>
+                                <ul class="ms-4">
+                                    <li><label><input type="radio" name="q4" value="Claro" required> ¡Claro! Porque hasta el cielo llora de emoción</label></li>
+                                    <li><label><input type="radio" name="q4" value="Sol"> No, el sol brillará por amor</label></li>
+                                    <li><label><input type="radio" name="q4" value="Llovizna"> Solo una bendita llovizna al atardecer</label></li>
+                                    <li><label><input type="radio" name="q4" value="Confeti"> Lluvia de confeti y nada más</label></li>
+                                </ul>
+                            </div>
 
-                                <!-- Pregunta 4 -->
-                                <div class="form-group col-12 mb-3">
-                                    <label><strong>4. ☔ ¿Crees que lloverá el día de la boda?</strong></label>
-                                    <ul class="ms-4">
-                                        <li><label><input type="radio" name="q4" value="Claro" required> ¡Claro! Porque hasta el cielo llora de emoción</label></li>
-                                        <li><label><input type="radio" name="q4" value="Sol"> No, el sol brillará por amor</label></li>
-                                        <li><label><input type="radio" name="q4" value="Llovizna"> Solo una bendita llovizna al atardecer</label></li>
-                                        <li><label><input type="radio" name="q4" value="Confeti"> Lluvia de confeti y nada más</label></li>
-                                    </ul>
-                                </div>
+                            <!-- Pregunta 5 -->
+                            <div class="form-group col-12 mb-3">
+                                <label><strong>5. 😢 ¿Quién será la primera persona en llorar?</strong></label>
+                                <ul class="ms-4">
+                                    <li><label><input type="radio" name="q5" value="Temis" required> Temis</label></li>
+                                    <li><label><input type="radio" name="q5" value="Lot"> Lot</label></li>
+                                    <li><label><input type="radio" name="q5" value="Mamá de Lot"> La mamá de Lot</label></li>
+                                    <li><label><input type="radio" name="q5" value="Todos"> Todos al mismo tiempo</label></li>
+                                </ul>
+                            </div>
 
-                                <!-- Pregunta 5 -->
-                                <div class="form-group col-12 mb-3">
-                                    <label><strong>5. 😢 ¿Quién será la primera persona en llorar?</strong></label>
-                                    <ul class="ms-4">
-                                        <li><label><input type="radio" name="q5" value="Temis" required> Temis</label></li>
-                                        <li><label><input type="radio" name="q5" value="Lot"> Lot</label></li>
-                                        <li><label><input type="radio" name="q5" value="Mamá de Lot"> La mamá de Lot</label></li>
-                                        <li><label><input type="radio" name="q5" value="Todos"> Todos al mismo tiempo</label></li>
-                                    </ul>
-                                </div>
+                            <!-- Pregunta 6 -->
+                            <div class="form-group col-12 mb-3">
+                                <label><strong>6. 💍 ¿Habrá una propuesta de matrimonio sorpresa durante la boda?</strong></label>
+                                <ul class="ms-4">
+                                    <li><label><input type="radio" name="q6" value="Sí" required> ¡Sí, ya la tienen planeada!</label></li>
+                                    <li><label><input type="radio" name="q6" value="No"> No lo creo… ¿o sí?</label></li>
+                                    <li><label><input type="radio" name="q6" value="Tal vez"> Tal vez… pero no de parte de los novios</label></li>
+                                </ul>
+                            </div>
 
-                                <!-- Pregunta 6 -->
-                                <div class="form-group col-12 mb-3">
-                                    <label><strong>6. 💍 ¿Habrá una propuesta de matrimonio sorpresa durante la boda?</strong></label>
-                                    <ul class="ms-4">
-                                        <li><label><input type="radio" name="q6" value="Sí" required> ¡Sí, ya la tienen planeada!</label></li>
-                                        <li><label><input type="radio" name="q6" value="No"> No lo creo… ¿o sí?</label></li>
-                                        <li><label><input type="radio" name="q6" value="Tal vez"> Tal vez… pero no de parte de los novios</label></li>
-                                    </ul>
-                                </div>
+                            <!-- Pregunta 7 -->
+                            <div class="form-group col-12 mb-3">
+                                <label><strong>7. 🎤 ¿Quién dará el primer discurso a los novios?</strong></label>
+                                <ul class="ms-4">
+                                    <li><label><input type="radio" name="q7" value="Padrino" required> El padrino</label></li>
+                                    <li><label><input type="radio" name="q7" value="Madrina"> La madrina</label></li>
+                                    <li><label><input type="radio" name="q7" value="Mamá de Temis"> La Mamá de Temis</label></li>
+                                    <li><label><input type="radio" name="q7" value="Papá de Lot"> El papá de Lot</label></li>
+                                    <li><label><input type="radio" name="q7" value="Hermano de Temis"> Alguno de los hermanos de Temis</label></li>
+                                    <li><label><input type="radio" name="q7" value="Hermano de Lot"> Alguno de los hermanos de Lot</label></li>
+                                </ul>
+                            </div>
 
-                                <!-- Pregunta 7 -->
-                                <div class="form-group col-12 mb-3">
-                                    <label><strong>7. 🎤 ¿Quién dará el primer discurso a los novios?</strong></label>
-                                    <ul class="ms-4">
-                                        <li><label><input type="radio" name="q7" value="Padrino" required> El padrino</label></li>
-                                        <li><label><input type="radio" name="q7" value="Madrina"> La madrina</label></li>
-                                        <li><label><input type="radio" name="q7" value="Mamá de Temis"> La Mamá de Temis</label></li>
-                                        <li><label><input type="radio" name="q7" value="Papá de Lot"> El papá de Lot</label></li>
-                                        <li><label><input type="radio" name="q7" value="Hermano de Temis"> Alguno de los hermanos de Temis</label></li>
-                                        <li><label><input type="radio" name="q7" value="Hermano de Lot"> Alguno de los hermanos de Lot</label></li>
-                                    </ul>
-                                </div>
+                            <!-- Pregunta 8 -->
+                            <div class="form-group col-12 mb-3">
+                                <label><strong>8. 🎂 ¿De qué sabor será el pastel?</strong></label>
+                                <ul class="ms-4">
+                                    <li><label><input type="radio" name="q8" value="Chocolate" required> Chocolate</label></li>
+                                    <li><label><input type="radio" name="q8" value="Vainilla"> Vainilla</label></li>
+                                    <li><label><input type="radio" name="q8" value="Red Velvet"> Red Velvet</label></li>
+                                    <li><label><input type="radio" name="q8" value="Sin pastel"> No habrá pastel</label></li>
+                                    <li><label><input type="radio" name="q8" value="Tiramisu"> Tiramisu en lugar de pastel</label></li>
+                                </ul>
+                            </div>
 
-                                <!-- Pregunta 8 -->
-                                <div class="form-group col-12 mb-3">
-                                    <label><strong>8. 🎂 ¿De qué sabor será el pastel?</strong></label>
-                                    <ul class="ms-4">
-                                        <li><label><input type="radio" name="q8" value="Chocolate" required> Chocolate</label></li>
-                                        <li><label><input type="radio" name="q8" value="Vainilla"> Vainilla</label></li>
-                                        <li><label><input type="radio" name="q8" value="Red Velvet"> Red Velvet</label></li>
-                                        <li><label><input type="radio" name="q8" value="Sin pastel"> No habrá pastel</label></li>
-                                        <li><label><input type="radio" name="q8" value="Tiramisu"> Tiramisu en lugar de pastel</label></li>
-                                    </ul>
-                                </div>
+                            <div class="col-md-12 mb-4 submit-btn">
+                                <button type="submit" class="submit">Enviar Respuestas</button>
+                                <span id="loader"><i class="fa fa-refresh fa-spin fa-3x fa-fw"></i></span>
+                            </div>
+                            <div class="col-md-12 mb-4 success-error-message">
+                                <div id="quiz-response"></div>
+                                <!-- <div id="error"> Un error ocurrió. Por favor intente más tarde. </div> -->
+                            </div>
 
-                                <div class="col-md-12 mb-4 submit-btn">
-                                    <button type="submit" class="submit">Enviar Respuestas</button>
-                                    <span id="loader"><i class="fa fa-refresh fa-spin fa-3x fa-fw"></i></span>
-                                </div>
-                                <div class="col-md-12 mb-4 success-error-message">
-                                    <div id="form-quiz-response"></div>
-                                    <!-- <div id="error"> Un error ocurrió. Por favor intente más tarde. </div> -->
-                                </div>
-
-                            </form>
-                        </div>
+                        </form>
                     </div>
                 </div> <!-- end row -->
             </div> <!-- end container -->
@@ -1383,57 +1382,37 @@
     <!-- All JavaScript files
     ================================================== -->
     <script>
-        document.getElementById("songs-form").addEventListener("submit", function(e) {
-        e.preventDefault();
+        function attachFormHandler(formId, responseId, successMsg) {
+            document.getElementById(formId).addEventListener("submit", function(e) {
+                e.preventDefault();
 
-        const form = e.target;
-        const formData = new FormData(form);
-        const params = new URLSearchParams(formData).toString();
-        const respuesta = document.getElementById("form-response");
+                const form = e.target;
+                const formData = new FormData(form);
+                const params = new URLSearchParams(formData).toString();
+                const respuesta = document.getElementById(responseId);
 
-        fetch("https://script.google.com/macros/s/AKfycbxKq4JFiYrRrHzdFv_Ovn0CBVnhmJRS_QmRhryLqEQkTEFADsSLALMYG3btf4orzRmXQQ/exec", {
-            method: "POST",
-            headers: {
-            "Content-Type": "application/x-www-form-urlencoded"
-            },
-            body: params
-        })
-        .then(response => response.text())
-        .then(data => {
-            respuesta.textContent = "✅ ¡Gracias! Tu canción ha sido guardada.";
-            form.reset();
-        })
-        .catch(error => {
-            respuesta.textContent = "❌ Error al enviar. Intenta de nuevo.";
-        });
-        });
-    </script>
-
-    <script>
-        document.getElementById("quiz-form").addEventListener("submit", function(e) {
-            e.preventDefault();
-
-            const form = e.target;
-            const formData = new FormData(form);
-            const params = new URLSearchParams(formData).toString();
-            const respuesta = document.getElementById("form-quiz-response");
-
-            fetch("https://script.google.com/macros/s/AKfycby0__KFr-09llePIDxx26HxKaN8yTwC0427qwh3A7Um5XoU_uar98hbEzye7b4A4xAa/exec", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/x-www-form-urlencoded"
-            },
-            body: params
-            })
-            .then(response => response.text())
-            .then(data => {
-            respuesta.textContent = "✅ ¡Gracias! Tus respuestas han sido registradas.";
-            form.reset();
-            })
-            .catch(error => {
-            respuesta.textContent = "❌ Error al enviar. Intenta de nuevo.";
+                fetch("https://script.google.com/macros/s/AKfycbxh3k7D1vBHoF2VfTaW1l2-xOahVhutjkwemrXKUxwkNCBaXCo-wyEwizVDYBDFFwBB/exec", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    },
+                    body: params
+                })
+                .then(response => response.text())
+                .then(data => {
+                    respuesta.textContent = successMsg;
+                    form.reset();
+                })
+                .catch(error => {
+                    respuesta.textContent = "❌ Error al enviar. Intenta de nuevo.";
+                });
             });
-        });
+        }
+
+        // 🎶 Canciones
+        attachFormHandler("songs-form", "form-response", "✅ ¡Gracias! Tu canción ha sido guardada.");
+        // 🎉 Cuestionario
+        attachFormHandler("quiz-form", "quiz-response", "✅ ¡Gracias! Tus respuestas han sido guardadas.");
     </script>
 
     <script src="js/jquery.min.js"></script>
