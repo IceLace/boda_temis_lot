@@ -4161,11 +4161,12 @@ a:focus {
 #quiz-form label {
   display: inline-flex;
   align-items: center;
-  gap: 8px; /* spacing between radio and text */
+  gap: 8px;
+  color: #ffffff;
 }
 
 #quiz-form input[type="radio"] {
-  vertical-align: middle;    /* espacio entre círculo y texto */
+  vertical-align: middle;
   margin: 0;
   height: 25px;
 }
