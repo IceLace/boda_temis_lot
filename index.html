@@ -1109,7 +1109,7 @@
                             <thead>
                                 <tr>
                                     <th>Fecha</th>
-                                    <th>Temp. Máx / Min</th>
+                                    <th>Temperatura</th>
                                     <th>Humedad</th>
                                     <th>Probabilidad de LLuvia</th>
                                 </tr>
@@ -1456,7 +1456,7 @@
                 const row = `
                 <tr>
                     <td>${formatDate(daily.time[i])}</td>
-                    <td>${daily.temperature_2m_max[i]} °C / ${daily.temperature_2m_min[i]} °C</td>
+                    <td>${daily.temperature_2m_min[i]} - ${daily.temperature_2m_max[i]} °C</td>
                     <td>${daily.relative_humidity_2m_min[i]}-${daily.relative_humidity_2m_max[i]}%</td>
                     <td>${daily.precipitation_probability_max[i]}%</td>
                 </tr>
