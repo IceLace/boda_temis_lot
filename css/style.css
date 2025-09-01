@@ -2101,12 +2101,12 @@ a:focus {
 
 .site-footer h2 {
   font-family: "Great Vibes", cursive;
-  font-size: 67px;
-  font-size: 3.72222rem;
+  font-size: 50px;
+  font-size: 2.72222rem;
   color: #fff;
   margin: 0 0 0.3em;
-  padding: 0 275px;
-  text-transform: capitalize;
+  padding: 0 60px;
+  /* text-transform: capitalize; */
   letter-spacing: 5px;
   position: relative;
   z-index: 1;
@@ -4179,24 +4179,24 @@ a:focus {
   margin-top: 0px;
 }
 
-#forecast-table table{
+#forecast-table table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
 }
 
-#forecast-table th, td{
+#forecast-table th, td {
   border: 1px solid #ccc;
   padding: 10px;
   text-align: center;
   font-family: "Dosis", sans-serif;
 }
 
-#forecast-table th{
+#forecast-table th {
   background-color: #f2f2f2;
 }
 
-#forecast-table td{
+#forecast-table td {
   color: #ffffff;
   font-size: 16px;
 }
